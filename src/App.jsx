@@ -7,7 +7,7 @@ function App() {
 
   return (
     <>
-      <div>React Hooks</div>
+      <div className='App'>React Hooks</div>
     </>
   );
 }

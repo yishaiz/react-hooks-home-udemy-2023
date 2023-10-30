@@ -15,11 +15,17 @@ function App() {
     setUserQuery(event.target.value);
   };
 
+  const handleKeyPress = (event) => {
+    if (event.key === 'Enter') {
+      searchQuery();
+    }
+  };
+
   return (
     <div className='App'>
       <h1>React Hooks</h1>
       <div className='form'>
-        <input value={userQuery} onChange={updateUserQuery} />
+        <input value={userQuery} onChange={updateUserQuery} onKeyPress={handleKeyPress} />
         <button onClick={searchQuery}>Search</button>
       </div>
     </div>

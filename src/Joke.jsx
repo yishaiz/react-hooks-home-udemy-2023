@@ -7,7 +7,7 @@ function Joke() {
     fetch('https://official-joke-api.appspot.com/jokes/random')
       .then((response) => response.json())
       .then((json) => {
-        console.log({ json });
+        // console.log({ json });
         setJoke(json);
       });
   }, []);
@@ -23,15 +23,3 @@ function Joke() {
   );
 }
 export default Joke;
-
-// const [userQuery, setUserQuery] = useState('');
-
-//   return (
-//     <div className='App'>
-//       <h1>React Hooks</h1>
-//       <div className='form'>
-//         <input value={userQuery} onChange={updateUserQuery} onKeyPress={handleKeyPress} />
-//         <button onClick={searchQuery}>Search</button>
-//       </div>
-//     </div>
-//   );

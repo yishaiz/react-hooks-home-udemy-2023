@@ -1,19 +1,6 @@
-import { useState, useEffect } from 'react';
+// import useFetch from './hooks/useFetch';
 
-const useFetch = (url, initialValue) => {
-  const [result, setResult] = useState(initialValue);
-
-  useEffect(() => {
-    fetch(url)
-      .then((response) => response.json())
-      .then((json) => {
-        console.log({ json });
-        setResult(json);
-      });
-  }, []);
-
-  return result;
-};
+import { useFetch } from './hooks/useFetch';
 
 function Joke() {
   const { setup, punchline } = useFetch('https://official-joke-api.appspot.com/jokes/random', {});

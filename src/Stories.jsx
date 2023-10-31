@@ -1,16 +1,7 @@
-import { useState, useEffect } from 'react';
+import { useFetch } from './hooks/useFetch';
 
 function Stories() {
-  const [stories, setStories] = useState([]);
-
-  useEffect(() => {
-    fetch('http://localhost:3005/topstories')
-      .then((response) => response.json())
-      .then((json) => {
-        console.log({ json });
-        setStories(json);
-      });
-  }, []);
+  const stories = useFetch('http://localhost:3005/topstories', []);
 
   return (
     <div className='Stories'>
